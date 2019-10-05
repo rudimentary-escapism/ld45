@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="ld45"
-config/icon="res://icon.png"
+run/main_scene="res://src/scenes/TestLevel.tscn"
+config/icon="res://assets/icon.png"
+
+[autoload]
+
+Events="*res://src/scripts/Events.gd"
 
 [rendering]
 
