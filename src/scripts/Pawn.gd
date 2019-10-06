@@ -1,3 +1,4 @@
+tool
 extends Node2D
 class_name Pawn
 
@@ -9,6 +10,7 @@ onready var tween: Tween = $Tween
 export (int) var hp: = 5
 export (int) var max_steps := 3
 export (int) var steps_per_turn := 2
+export (bool) var flip_h = false setget _flip_h
 
 var steps := 0 setget _set_steps
 var skill = { "none": 0 }
@@ -46,6 +48,8 @@ func step(point: Vector2) -> void:
     Map.add_unit(get_parent().world_to_map(point))
     
     z_index = int(point.y)
+    if position.x != point.x:
+        _flip_h(position.x < point.x)
     
     if tween.interpolate_property(self, "position", position,
         point, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT) and tween.start():
@@ -77,3 +81,8 @@ func damage(damage: int) -> void:
 func _ready():
     $HP.text = str(hp)
     _set_steps(0)
+    
+
+func _flip_h(value: bool) -> void:
+    flip_h = value
+    $Sprite.flip_h = flip_h

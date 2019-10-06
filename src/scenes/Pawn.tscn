@@ -28,6 +28,6 @@ margin_bottom = -65.0
 text = "nothing"
 align = 1
 
-[node name="Character_L" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 32, 0 )
 texture = ExtResource( 2 )
