@@ -44,6 +44,9 @@ func move(path: Array) -> void:
 func step(point: Vector2) -> void:
     Map.remove_unit(get_parent().world_to_map(position))
     Map.add_unit(get_parent().world_to_map(point))
+    
+    z_index = int(point.y)
+    
     if tween.interpolate_property(self, "position", position,
         point, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT) and tween.start():
         return
