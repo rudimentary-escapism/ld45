@@ -14,6 +14,21 @@ func _ready() -> void:
     var cells: = astar_add_walkable_cells(obstacles)
     astar_connect_walkable_cells(cells)
     
+    for unit in get_children():
+        var coordinate: = world_to_map(unit.position)
+        unit.position = map_to_world(coordinate)
+        add_unit_to_map(coordinate)
+
+
+func add_unit_to_map(coordinate: Vector2) -> void:
+    var index: = calculate_point_index(coordinate)
+    astar.set_point_disabled(index, true)
+    
+
+func remove_unit_from_map(coordinate: Vector2) -> void:
+    var index: = calculate_point_index(coordinate)
+    astar.set_point_disabled(index, false)
+    
 
 func astar_add_walkable_cells(obstacles := []) -> Array:
     var points: = []
@@ -62,7 +77,7 @@ func find_path(init_position: Vector2, target_position: Vector2) -> Array:
     var start_position: = world_to_map(init_position)
     var end_position: = world_to_map(target_position)
 
-#    remove_unit_from_map(start_position)
+    remove_unit_from_map(start_position)
 #    remove_unit_from_map(end_position)
 
     var world_path: = []
@@ -74,7 +89,7 @@ func find_path(init_position: Vector2, target_position: Vector2) -> Array:
             var point_world: = map_to_world(Vector2(point.x, point.y))
             world_path.append(point_world)
 
-#    add_unit_to_map(start_position)
+    add_unit_to_map(start_position)
 #    add_unit_to_map(end_position)
 
     world_path.pop_front()

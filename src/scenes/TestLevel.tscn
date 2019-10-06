@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/select.png" type="Texture" id=2]
 [ext_resource path="res://src/scripts/TileMap.gd" type="Script" id=3]
-[ext_resource path="res://assets/tile1.png" type="Texture" id=4]
-[ext_resource path="res://assets/tile2.png" type="Texture" id=5]
-[ext_resource path="res://src/scenes/Pawn.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/scenes/PlayerController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/Pawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/PlayerController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tile1.png" type="Texture" id=6]
+[ext_resource path="res://assets/tile2.png" type="Texture" id=7]
+[ext_resource path="res://src/scripts/UI.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "select.png 0"
@@ -22,7 +23,7 @@
 
 [sub_resource type="TileSet" id=2]
 0/name = "tile1.png 0"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -32,7 +33,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tile2.png 1"
-1/texture = ExtResource( 5 )
+1/texture = ExtResource( 7 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -62,11 +63,35 @@ format = 1
 tile_data = PoolIntArray( 5, 0, 0, 65541, 0, 0, 131075, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0 )
 script = ExtResource( 3 )
 
+[node name="Pawn" parent="Foreground" instance=ExtResource( 4 )]
+
+[node name="PlayerController" parent="Foreground/Pawn" instance=ExtResource( 5 )]
+
+[node name="Pawn2" parent="Foreground" instance=ExtResource( 4 )]
+position = Vector2( 140.06, 0.809601 )
+
+[node name="PlayerController" parent="Foreground/Pawn2" instance=ExtResource( 5 )]
+
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 0, 0, 3, 1, 0, 4, 0, 0, 5, 1, 0, 65536, 1, 0, 65537, 0, 0, 65538, 1, 0, 65539, 0, 0, 65540, 1, 0, 65541, 0, 0, 131072, 0, 0, 131073, 1, 0, 131074, 0, 0, 131075, 1, 0, 131076, 0, 0, 131077, 1, 0, 196608, 1, 0, 196609, 0, 0, 196610, 1, 0, 196611, 0, 0, 196612, 1, 0, 196613, 0, 0, 262144, 0, 0, 262145, 1, 0, 262146, 0, 0, 262147, 1, 0, 262148, 0, 0, 262149, 1, 0, 327680, 1, 0, 327681, 0, 0, 327682, 1, 0, 327683, 0, 0, 327684, 1, 0, 327685, 0, 0 )
 
-[node name="Pawn" parent="Background" instance=ExtResource( 6 )]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
 
-[node name="PlayerController" parent="Background/Pawn" instance=ExtResource( 7 )]
+[node name="EndTurnButton" type="Button" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -67.0
+margin_top = -20.0
+text = "End Turn"
+
+[node name="ActivUnit" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+[connection signal="pressed" from="UI/EndTurnButton" to="UI" method="_on_EndTurnButton_pressed"]

@@ -12,3 +12,10 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Steps" type="Label" parent="."]
+margin_left = -0.719864
+margin_top = 52.7901
+margin_right = 61.2801
+margin_bottom = 66.7901
+align = 1
