@@ -30,6 +30,9 @@ func _set_steps(new_steps: int) -> void:
 
 
 func move(path: Array) -> void:
+    if len(path) > steps:
+        return
+    
     emit_signal("busy")
 
     for point in path:
