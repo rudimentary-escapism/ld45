@@ -28,6 +28,7 @@ config/icon="res://assets/icon.png"
 
 Events="*res://src/scripts/Events.gd"
 Queue="*res://src/scripts/Queue.gd"
+Map="*res://src/scripts/Map.gd"
 
 [rendering]
 

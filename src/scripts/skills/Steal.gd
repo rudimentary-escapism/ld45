@@ -12,6 +12,7 @@ func use(target: Pawn) -> void:
         { "none": 0 }:
             lend_skill = target.skill
             match lend_skill:
+                #warning-ignore:unassigned_variable
                 { "some": var skill }:
                     _change_skill(skill.name)
                 

@@ -6,9 +6,12 @@ var active_unit: Pawn
 func _ready():
     if Events.connect("turn_ended", self, "next_turn"):
         print("Cannot see, if turn is ended")
+    if Events.connect("end_button_pressed", self, "next_turn"):
+        print(name + " cannot see, if button was pressed")
         
 
 func next_turn() -> void:
+    Events.emit_signal("change_walking_area", { "clear": 0 })
     if is_instance_valid(active_unit):
         units.push_back(active_unit)
 

@@ -10,5 +10,5 @@ func _on_unit_activated(pawn: Pawn):
 
 
 func _on_EndTurnButton_pressed():
-    Events.emit_signal("turn_ended")
+    Events.emit_signal("end_button_pressed")
 
