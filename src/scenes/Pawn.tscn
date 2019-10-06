@@ -19,3 +19,15 @@ margin_top = 52.7901
 margin_right = 61.2801
 margin_bottom = 66.7901
 align = 1
+
+[node name="HP" type="Label" parent="."]
+margin_right = 63.0
+margin_bottom = 14.0
+align = 1
+
+[node name="Skill" type="Label" parent="."]
+margin_top = 16.0
+margin_right = 62.0
+margin_bottom = 30.0
+text = "nothing"
+align = 1

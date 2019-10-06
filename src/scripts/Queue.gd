@@ -22,7 +22,6 @@ func next_turn() -> void:
 
 
 func add(pawn: Pawn) -> void:
-    print(pawn)
     units.push_back(pawn)
     if pawn.connect("tree_exiting", self, "_on_Pawn_tree_exiting", [pawn]):
         print("Cannot see, if pawn dies")

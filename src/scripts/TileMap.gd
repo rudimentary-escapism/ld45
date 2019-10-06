@@ -4,10 +4,6 @@ var astar = AStar.new()
 
 export (Vector2) var map_size: = Vector2(64, 64)
 
-#func convert_coordinate(coordinate: Vector2) -> Vector2:
-#    var temp = world_to_map(coordinate)
-#    return map_to_world(temp)
-
 
 func _ready() -> void:
     var obstacles: = get_used_cells()
@@ -94,3 +90,11 @@ func find_path(init_position: Vector2, target_position: Vector2) -> Array:
 
     world_path.pop_front()
     return world_path
+    
+
+func get_pawn(coordinate: Vector2) -> Dictionary:
+    var coord = world_to_map(coordinate)
+    for unit in get_children():
+        if world_to_map(unit.position) == coord:
+            return { "some": unit }
+    return { "none": 0 }
