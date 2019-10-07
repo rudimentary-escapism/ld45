@@ -69,9 +69,11 @@ func attack(pawn: Pawn) -> void:
     match skill:
         #warning-ignore:unassigned_variable
         { "some": var _skill}:
+            $AnimatedSprite.animation = "shooting"
             emit_signal("busy")
             _skill.use(pawn)
-            yield(get_tree().create_timer(0.1), "timeout")
+            yield(get_tree().create_timer(1), "timeout")
+            $AnimatedSprite.animation = "default"
             _set_steps(steps - 1)
             if steps > 0:
                 emit_signal("idle")
