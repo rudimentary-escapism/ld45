@@ -38,8 +38,11 @@ func move(path: Array) -> void:
     for point in path:
         if steps == 0:
             break
+        
+        $AnimatedSprite.animation = "run"
         step(point)
         yield(tween, "tween_all_completed")
+        $AnimatedSprite.animation = "default"
         _set_steps(steps - 1)
 
     if steps > 0:
