@@ -22,7 +22,6 @@ _global_script_class_icons={
 
 config/name="ld45"
 run/main_scene="res://src/scenes/TestLevel.tscn"
-config/icon="res://assets/icon.png"
 
 [autoload]
 
