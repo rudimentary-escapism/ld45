@@ -72,6 +72,29 @@ func attack(pawn: Pawn) -> void:
             _set_steps(steps - 1)
             if steps > 0:
                 emit_signal("idle")
+                
+
+static func get_attack_path(from: Vector2, to: Vector2) -> Array:
+    var diff: = to - from
+    var neutral: = diff.abs()
+    var signs: = Vector2(1 if diff.x > 0 else -1, 1 if diff.y > 0 else -1)
+    
+    var point: = from
+    var path: = []
+    var init: = Vector2.ZERO 
+    while init.x < neutral.x || init.y < neutral.y:
+        if (1 + 2 * init.x) * neutral.y == (1 + 2 * init.y) * neutral.x:
+            point += signs
+            init += Vector2(1, 1)
+        elif (1 + 2 * init.x) * neutral.y < (1 + 2 * init.y) * neutral.x:
+            point.x += signs.x
+            init.x += 1
+        else:
+            point.y += signs.y
+            init.y += 1
+        path.push_back(point)
+    path.pop_back()
+    return path
     
     
 func damage(damage: int) -> void:
@@ -88,4 +111,4 @@ func _ready():
 
 func _flip_h(value: bool) -> void:
     flip_h = value
-    $Sprite.flip_h = flip_h
+    $AnimatedSprite.flip_h = flip_h

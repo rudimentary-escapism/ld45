@@ -19,6 +19,9 @@ func _input(event: InputEvent) -> void:
     if event is InputEventMouseButton and event.pressed:
         Events.emit_signal("click", get_parent(), event.position)
 
+    if event is InputEventMouseMotion:
+        Events.emit_signal("mouse_motion", get_parent(), event.position)
+
 
 func _ready() -> void:
     if get_parent().connect("idle", self, "_on_Pawn_idle"):

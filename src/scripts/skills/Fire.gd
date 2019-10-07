@@ -1,6 +1,6 @@
 extends Node
 
-func use(target: Pawn) -> void:
+static func use(target: Pawn) -> void:
     target.damage(1)
                 
 func _ready() -> void:
