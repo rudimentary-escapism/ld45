@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scripts/Pawn.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character_L.png" type="Texture" id=2]
 [ext_resource path="res://assets/animations/Character_idle-1.png" type="Texture" id=3]
 [ext_resource path="res://assets/animations/Character_idle-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/animations/Character_idle-3.png" type="Texture" id=5]
+[ext_resource path="res://assets/animations/Character_run-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/animations/Character_run-2.png" type="Texture" id=7]
+[ext_resource path="res://assets/animations/Character_run-3.png" type="Texture" id=8]
+[ext_resource path="res://assets/animations/Character_run-4.png" type="Texture" id=9]
+[ext_resource path="res://assets/animations/Character_run-5.png" type="Texture" id=10]
+[ext_resource path="res://assets/animations/Character_run-6.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,6 +18,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 4.0
 } ]
 
 [node name="Pawn" type="Node2D"]
@@ -47,6 +58,7 @@ position = Vector2( 32, 0 )
 texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 37, 2 )
+position = Vector2( 32, -16 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
