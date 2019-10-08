@@ -1,27 +1,32 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/Wall_F-1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Wall_F-2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Box_big.png" type="Texture" id=4]
-[ext_resource path="res://assets/Wall_L.png" type="Texture" id=5]
-[ext_resource path="res://assets/Wall_LR.png" type="Texture" id=6]
-[ext_resource path="res://assets/Corner_R.png" type="Texture" id=7]
-[ext_resource path="res://assets/Empty.png" type="Texture" id=8]
-[ext_resource path="res://assets/Box.png" type="Texture" id=9]
-[ext_resource path="res://src/scripts/TileMap.gd" type="Script" id=10]
-[ext_resource path="res://src/scenes/Pawn.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/scenes/PlayerController.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/scenes/skills/Steal.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/scenes/skills/Fire.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/Tile-1.png" type="Texture" id=15]
-[ext_resource path="res://assets/Tile-2.png" type="Texture" id=16]
-[ext_resource path="res://assets/Tile-3.png" type="Texture" id=17]
-[ext_resource path="res://assets/Tile-4.png" type="Texture" id=18]
-[ext_resource path="res://assets/Tile-5.png" type="Texture" id=19]
-[ext_resource path="res://assets/Tile-6.png" type="Texture" id=20]
-[ext_resource path="res://src/scripts/UI.gd" type="Script" id=21]
-[ext_resource path="res://src/scripts/WalkingArea.gd" type="Script" id=22]
+[ext_resource path="res://assets/Wall_Light_F-1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Wall_Light_F-2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Empty_Light.png" type="Texture" id=7]
+[ext_resource path="res://assets/Door-1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Door-2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Wall_L.png" type="Texture" id=10]
+[ext_resource path="res://assets/Wall_LR.png" type="Texture" id=11]
+[ext_resource path="res://assets/Corner_R.png" type="Texture" id=12]
+[ext_resource path="res://assets/Empty.png" type="Texture" id=13]
+[ext_resource path="res://assets/Box.png" type="Texture" id=14]
+[ext_resource path="res://src/scripts/TileMap.gd" type="Script" id=15]
+[ext_resource path="res://src/scenes/Pawn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/scenes/PlayerController.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/scenes/skills/Steal.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/scenes/skills/Fire.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/Tile-1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Tile-2.png" type="Texture" id=21]
+[ext_resource path="res://assets/Tile-3.png" type="Texture" id=22]
+[ext_resource path="res://assets/Tile-4.png" type="Texture" id=23]
+[ext_resource path="res://assets/Tile-5.png" type="Texture" id=24]
+[ext_resource path="res://assets/Tile-6.png" type="Texture" id=25]
+[ext_resource path="res://src/scripts/UI.gd" type="Script" id=26]
+[ext_resource path="res://src/scripts/WalkingArea.gd" type="Script" id=27]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Wall_F-1.png 0"
@@ -45,7 +50,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "Wall_L.png 2"
-2/texture = ExtResource( 5 )
+2/texture = ExtResource( 10 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 64 )
@@ -55,7 +60,7 @@
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Wall_LR.png 3"
-3/texture = ExtResource( 6 )
+3/texture = ExtResource( 11 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 64 )
@@ -65,7 +70,7 @@
 3/shapes = [  ]
 3/z_index = 0
 7/name = "Corner_R.png 7"
-7/texture = ExtResource( 7 )
+7/texture = ExtResource( 12 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 64, 64 )
@@ -75,7 +80,7 @@
 7/shapes = [  ]
 7/z_index = 0
 8/name = "Empty.png 8"
-8/texture = ExtResource( 8 )
+8/texture = ExtResource( 13 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 64 )
@@ -85,7 +90,7 @@
 8/shapes = [  ]
 8/z_index = 0
 9/name = "Box.png 9"
-9/texture = ExtResource( 9 )
+9/texture = ExtResource( 14 )
 9/tex_offset = Vector2( 0, -32 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 32, 64, 96 )
@@ -110,10 +115,60 @@
 10/navigation_offset = Vector2( 0, 0 )
 10/shapes = [  ]
 10/z_index = 0
+11/name = "Wall_Light_F-1.png 11"
+11/texture = ExtResource( 5 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 64, 64 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Wall_Light_F-2.png 12"
+12/texture = ExtResource( 6 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 64, 64 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Empty_Light.png 13"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 64, 64 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Door-1.png 14"
+14/texture = ExtResource( 8 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 64, 64 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shapes = [  ]
+14/z_index = 0
+15/name = "Door-2.png 15"
+15/texture = ExtResource( 9 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 64, 64 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shapes = [  ]
+15/z_index = 0
 
 [sub_resource type="TileSet" id=2]
 0/name = "Tile-1.png 0"
-0/texture = ExtResource( 15 )
+0/texture = ExtResource( 20 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -123,7 +178,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Tile-2.png 1"
-1/texture = ExtResource( 16 )
+1/texture = ExtResource( 21 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -133,7 +188,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "Tile-3.png 2"
-2/texture = ExtResource( 17 )
+2/texture = ExtResource( 22 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 64 )
@@ -143,7 +198,7 @@
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Tile-4.png 3"
-3/texture = ExtResource( 18 )
+3/texture = ExtResource( 23 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 64 )
@@ -153,7 +208,7 @@
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Tile-5.png 4"
-4/texture = ExtResource( 19 )
+4/texture = ExtResource( 24 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 64, 64 )
@@ -163,7 +218,7 @@
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Tile-6.png 5"
-5/texture = ExtResource( 20 )
+5/texture = ExtResource( 25 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 64, 64 )
@@ -175,7 +230,7 @@
 
 [sub_resource type="TileSet" id=3]
 0/name = "Empty.png 0"
-0/texture = ExtResource( 8 )
+0/texture = ExtResource( 13 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 0.352941 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -187,7 +242,7 @@
 
 [sub_resource type="TileSet" id=4]
 0/name = "Empty.png 0"
-0/texture = ExtResource( 8 )
+0/texture = ExtResource( 13 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 0, 1, 0, 0.470588 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -204,22 +259,22 @@ script = ExtResource( 1 )
 z_index = 1
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 65536, 536870914, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 3, 0, 65543, 0, 0, 65544, 0, 0, 65545, 2, 0, 131072, 536870914, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 3, 0, 131079, 1, 0, 131080, 1, 0, 131081, 2, 0, 196608, 536870914, 0, 196612, 10, 0, 196613, 10, 0, 196614, 3, 0, 196616, 10, 0, 196617, 2, 0, 262144, 536870914, 0, 262149, 9, 0, 262150, 0, 0, 262153, 2, 0, 327680, 536870914, 0, 327683, 9, 0, 327686, 1, 0, 327689, 2, 0, 393216, 536870914, 0, 393225, 2, 0, 458752, 7, 0, 458753, -2147483646, 0, 458754, -2147483646, 0, 458755, -2147483646, 0, 458756, -2147483646, 0, 458757, -2147483646, 0, 458758, -2147483646, 0, 458759, -2147483646, 0, 458760, -2147483646, 0, 458761, 536870919, 0 )
-script = ExtResource( 10 )
+tile_data = PoolIntArray( 0, 8, 0, 1, 8, 0, 2, 13, 0, 3, 8, 0, 4, 8, 0, 5, 13, 0, 6, 8, 0, 7, 8, 0, 8, 13, 0, 9, 8, 0, 65536, 536870914, 0, 65537, 0, 0, 65538, 12, 0, 65539, 14, 0, 65540, 536870926, 0, 65541, 12, 0, 65542, 3, 0, 65543, 0, 0, 65544, 12, 0, 65545, 2, 0, 131072, 536870914, 0, 131073, 1, 0, 131074, 11, 0, 131075, 536870927, 0, 131076, 15, 0, 131077, 1, 0, 131078, 3, 0, 131079, 11, 0, 131080, 1, 0, 131081, 2, 0, 196608, 536870914, 0, 196613, 10, 0, 196614, 3, 0, 196616, 10, 0, 196617, 2, 0, 262144, 536870914, 0, 262150, 0, 0, 262153, 2, 0, 327680, 536870914, 0, 327683, 9, 0, 327684, 10, 0, 327686, 1, 0, 327689, 2, 0, 393216, 536870914, 0, 393217, 10, 0, 393224, 9, 0, 393225, 2, 0, 458752, 7, 0, 458753, -2147483646, 0, 458754, -2147483646, 0, 458755, -2147483646, 0, 458756, -2147483646, 0, 458757, -2147483646, 0, 458758, -2147483646, 0, 458759, -2147483646, 0, 458760, -2147483646, 0, 458761, 536870919, 0 )
+script = ExtResource( 15 )
 
-[node name="Pawn" parent="Foreground" instance=ExtResource( 11 )]
+[node name="Pawn" parent="Foreground" instance=ExtResource( 16 )]
 position = Vector2( 76, 203 )
 
-[node name="PlayerController" parent="Foreground/Pawn" instance=ExtResource( 12 )]
+[node name="PlayerController" parent="Foreground/Pawn" instance=ExtResource( 17 )]
 
-[node name="Steal" parent="Foreground/Pawn" instance=ExtResource( 13 )]
+[node name="Steal" parent="Foreground/Pawn" instance=ExtResource( 18 )]
 
-[node name="Pawn2" parent="Foreground" instance=ExtResource( 11 )]
+[node name="Pawn2" parent="Foreground" instance=ExtResource( 16 )]
 position = Vector2( 464, 205 )
 
-[node name="PlayerController" parent="Foreground/Pawn2" instance=ExtResource( 12 )]
+[node name="PlayerController" parent="Foreground/Pawn2" instance=ExtResource( 17 )]
 
-[node name="Fire" parent="Foreground/Pawn2" instance=ExtResource( 14 )]
+[node name="Fire" parent="Foreground/Pawn2" instance=ExtResource( 19 )]
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -227,7 +282,7 @@ format = 1
 tile_data = PoolIntArray( 196609, 2, 0, 196610, 1, 0, 196611, 4, 0, 196612, 3, 0, 196613, 5, 0, 196615, 2, 0, 196616, 0, 0, 262145, 3, 0, 262146, 5, 0, 262147, 5, 0, 262148, 0, 0, 262149, 4, 0, 262151, 5, 0, 262152, 4, 0, 327681, 5, 0, 327682, 4, 0, 327683, 2, 0, 327684, 3, 0, 327685, 2, 0, 327687, 3, 0, 327688, 5, 0, 393217, 4, 0, 393218, 2, 0, 393219, 0, 0, 393220, 5, 0, 393221, 1, 0, 393222, 2, 0, 393223, 5, 0, 393224, 0, 0 )
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource( 21 )
+script = ExtResource( 26 )
 
 [node name="EndTurnButton" type="Button" parent="UI"]
 anchor_left = 1.0
@@ -247,7 +302,7 @@ margin_bottom = 14.0
 [node name="WalkingArea" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
 format = 1
-script = ExtResource( 22 )
+script = ExtResource( 27 )
 
 [node name="AttackArea" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
